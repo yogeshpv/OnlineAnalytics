@@ -1,4 +1,4 @@
-from myrepolib import main
+from lib import main
 
 
 def test_func():

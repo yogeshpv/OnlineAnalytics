@@ -5,10 +5,10 @@ install:
 	pip install -r requirements.txt
 
 test:
-	python -m pytest -vv --cov=myrepolib tests/
+	python -m pytest -vv --cov=lib tests/
 
 lint:
-	pylint --disable=R,C myrepolib  
+	pylint --disable=R,C lib  
 
 lint2:
 	pylint --disable=R,C tests
