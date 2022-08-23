@@ -1,6 +1,4 @@
-from lib import main
-
 
 def test_func():
-    result = main.myfunc()
+    result = 1
     assert result == 1
