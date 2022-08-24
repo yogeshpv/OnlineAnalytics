@@ -13,4 +13,7 @@ lint:
 lint2:
 	pylint --disable=R,C tests
 
+run:
+	python main.py
+
 all: install lint lint2 test
