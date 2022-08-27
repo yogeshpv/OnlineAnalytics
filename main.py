@@ -13,7 +13,7 @@ def predict():
   if request.method == "POST":
 
     os = request.form.get('Operating System')
-    country = request.form.get('OE Gestational Age')
+    country = request.form.get('Country')
     device = request.form.get('isMobile')
     page_views = request.form.get('Page Views')
     try:
