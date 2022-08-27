@@ -1,15 +1,43 @@
 from flask import Flask
-from flask import json
 from flask import request
+import joblib
 
 app = Flask(__name__)
-
 @app.route('/')
-def hello():
-    """Return a friendly HTTP greeting."""
-    return 'Hello World!' 
+def home():
+  return render_template('home.html')
+
+
+@app.route('/predict/', methods=['GET', 'POST'])
+def predict():
+  if request.method == "POST":
+
+    os = request.form.get('Operating System')
+    country = request.form.get('OE Gestational Age')
+    device = request.form.get('isMobile')
+    page_views = request.form.get('Page Views')
+    try:
+      prediction = predictTransaction(os, country, device, page_views)
+      return render_template('predict.html', prediction=prediction)
+    except ValueError:
+      return "Please Enter valid values"
+    pass
+  pass
+
+
+def predictTransaction(os, country, device, page_views):
+  data = [os, country, device, page_views]
+  print(data)
+  data = np.array(data).astype(np.float64)
+  data = data.reshape(1, -1)
+  print(data)
+  file = open("transaction_model.pkl", 'rb')
+  trained_model = joblib.load(file)
+  prediction = trained_model.predict(data)
+  return prediction
+
+  pass
+
 
 if __name__ == '__main__':
-    # This is used when running locally only. When deploying to Google App
-    
-    app.run(host='127.0.0.1', port=8080, debug=True)
+  app.run(debug=True)
