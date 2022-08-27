@@ -17,4 +17,7 @@ Create application on predicting transaction for [Google online Merchandise](htt
 ## BigQuery Logistic Regression Model
 ![Model](images/model.jpg)
 
+## Logging Dashboard
+![Logging](images/logging.jpg)
+
 
