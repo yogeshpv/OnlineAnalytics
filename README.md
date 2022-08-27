@@ -9,7 +9,7 @@ Create application on predicting transaction for [Google online Merchandise](htt
 ![High Level Design](images/cloud.jpg)
 
 ## UI Interface to Application
-![Online Prediction](images/ui.jpg)
+![Online Prediction](images/UI.jpg)
 
 ## Circle CI Deployment job
 ![Circle CI](images/circleci.jpg)
